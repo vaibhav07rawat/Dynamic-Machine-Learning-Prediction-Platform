@@ -1,2 +1,65 @@
-# Dynamic-Machine-Learning-Prediction-Platform
-Developed a dynamic ML platform using Streamlit that allows users to upload CSV/Excel datasets, select features and target variables, train multiple machine learning models, compare performance, visualize results, and generate real-time predictions through an interactive dashboard without modifying the source code.
+# Dynamic ML + TinyML Streamlit Dashboard
+
+This project is a complete B.Tech final-year style dashboard for tabular classification datasets.
+It starts with the Iris dataset by default, but it also supports uploading any CSV file and selecting
+the target column dynamically.
+
+## Project Features
+
+- CSV upload with `st.file_uploader`
+- Dynamic target selection with `st.selectbox`
+- Automatic feature detection by excluding only the selected target column
+- Automatic numeric and categorical column detection
+- Missing value handling, label encoding, one-hot encoding, and scaling where required
+- Dataset preview, shape, column list, statistics, information, and missing value checks
+- EDA with Plotly histograms, boxplots, heatmap, scatter matrix, class distribution, and distribution analysis
+- Model training and comparison:
+  - Logistic Regression
+  - Decision Tree
+  - Random Forest
+  - Support Vector Machine
+  - Naive Bayes
+  - TensorFlow Neural Network
+- Accuracy, precision, recall, F1 score, training time, and saved model size
+- 5-fold cross-validation for every model
+- Confusion matrices for every model
+- Dynamic Random Forest feature importance
+- TensorFlow training history charts
+- TensorFlow Lite conversion and TinyML comparison
+- Dynamic interactive prediction inputs for all detected features
+- Automatic project summary and conclusions
+
+## Folder Structure
+
+```text
+.
++-- app.py
++-- requirements.txt
++-- README.md
++-- data
+    +-- iris_data.csv
+```
+
+## How to Run
+
+Install the dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Start the Streamlit application:
+
+```bash
+streamlit run app.py
+```
+
+The app will open in your browser. If it does not open automatically, use the local URL shown in the terminal.
+
+## Dynamic Dataset Support
+
+The app no longer requires hardcoded feature columns. It automatically uses every column except the
+selected target column as input features.
+
+The original Iris Excel file was converted into `data/iris_data.csv`, which is used as the default
+demo dataset when no CSV is uploaded.

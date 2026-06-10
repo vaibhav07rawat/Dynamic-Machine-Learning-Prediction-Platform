@@ -36,23 +36,38 @@ the target column dynamically.
 +-- app.py
 +-- requirements.txt
 +-- README.md
-+-- data/
-|   +-- iris_data.csv
 +-- DATASETS/
-    +-- (Add your CSV and Excel files here)
+|   +-- README.md
+|   +-- bank-full.csv
+|   +-- bank_full_clean.csv
+|   +-- cleaned_data.csv
+|   +-- iris_data_final.csv.xlsx
+|   +-- wdbc.csv
 ```
 
-## Datasets Folder
+## Available Datasets
 
-The `DATASETS/` folder is dedicated to storing all CSV and Excel files that you want to use with the platform. Simply place your dataset files here, and you can:
+All CSV and Excel files are stored in the **DATASETS** folder. Here's what's available:
 
-1. Upload them through the Streamlit dashboard interface, or
-2. Reference them directly in the application
+- **bank-full.csv** - Bank marketing dataset (4.6 MB)
+  - Features: Banking customer data for marketing campaigns
+  - Use case: Classification and prediction models
 
-### Supported File Formats
-- `.csv` - Comma-separated values
-- `.xlsx` - Excel spreadsheets
-- `.xls` - Legacy Excel files
+- **bank_full_clean.csv** - Cleaned bank marketing dataset (3.7 MB)
+  - Features: Pre-processed bank data with cleaned values
+  - Use case: Ready-to-use dataset for model training
+
+- **cleaned_data.csv** - Pre-processed dataset (2.3 MB)
+  - Features: General cleaned dataset
+  - Use case: Intermediate analysis and modeling
+
+- **iris_data_final.csv.xlsx** - Iris dataset in Excel format (14.6 KB)
+  - Features: Classic iris flower classification data
+  - Use case: Quick demo and benchmarking
+
+- **wdbc.csv** - Breast Cancer Diagnostic Dataset (124 KB)
+  - Features: Medical diagnostic features
+  - Use case: Classification models for medical analysis
 
 ## How to Run
 
@@ -75,5 +90,17 @@ The app will open in your browser. If it does not open automatically, use the lo
 The app no longer requires hardcoded feature columns. It automatically uses every column except the
 selected target column as input features.
 
-The original Iris Excel file was converted into `data/iris_data.csv`, which is used as the default
-demo dataset when no CSV is uploaded.
+The platform now supports multiple datasets stored in the **DATASETS** folder. Simply select any CSV or Excel file from the DATASETS folder using the file uploader, and the application will:
+- Automatically detect features and target variables
+- Preprocess the data
+- Train multiple models
+- Generate predictions
+
+For more details about available datasets, see [DATASETS/README.md](DATASETS/README.md).
+
+## Adding New Datasets
+
+To add new datasets to the platform:
+1. Place your CSV or Excel files in the **DATASETS** folder
+2. No code modifications are required
+3. The files will be automatically available in the application through the file uploader

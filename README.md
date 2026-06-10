@@ -36,9 +36,23 @@ the target column dynamically.
 +-- app.py
 +-- requirements.txt
 +-- README.md
-+-- data
-    +-- iris_data.csv
++-- data/
+|   +-- iris_data.csv
++-- DATASETS/
+    +-- (Add your CSV and Excel files here)
 ```
+
+## Datasets Folder
+
+The `DATASETS/` folder is dedicated to storing all CSV and Excel files that you want to use with the platform. Simply place your dataset files here, and you can:
+
+1. Upload them through the Streamlit dashboard interface, or
+2. Reference them directly in the application
+
+### Supported File Formats
+- `.csv` - Comma-separated values
+- `.xlsx` - Excel spreadsheets
+- `.xls` - Legacy Excel files
 
 ## How to Run
 
